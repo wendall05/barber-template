@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{SHOP_NAME}} — Barber Shop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Bebas Neue', 'sans-serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            gold: '#C9A84C',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .hero-bg {
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    }
+    .fade-up {
+      animation: fadeUp 0.7s ease forwards;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="bg-[#0f0f0f] text-white font-sans">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <span class="font-display text-2xl tracking-widest text-gold">{{SHOP_NAME}}</span>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-white/70">
+        <a href="#services" class="hover:text-white transition-colors">Services</a>
+        <a href="#gallery" class="hover:text-white transition-colors">Gallery</a>
+        <a href="#about" class="hover:text-white transition-colors">About</a>
+        <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+      </div>
+      <a href="tel:{{PHONE}}" class="px-5 py-2 rounded-full text-sm font-semibold bg-gold text-black hover:bg-yellow-400 transition-colors">
+        Book Now
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-bg min-h-screen flex items-center pt-20">
+    <div class="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
+      <div class="fade-up">
+        <p class="text-gold text-sm font-semibold tracking-widest uppercase mb-4">Syracuse's Finest</p>
+        <h1 class="font-display text-6xl md:text-8xl leading-none tracking-wide mb-6">
+          FRESH<br/>CUTS.<br/>EVERY<br/>TIME.
+        </h1>
+        <p class="text-white/60 text-lg mb-8 max-w-md">{{TAGLINE}}</p>
+        <div class="flex items-center gap-4">
+          <a href="tel:{{PHONE}}" class="px-8 py-3.5 rounded-full bg-gold text-black font-semibold hover:bg-yellow-400 transition-colors">
+            Call to Book
+          </a>
+          <a href="#services" class="px-8 py-3.5 rounded-full border border-white/20 text-white font-semibold hover:border-white/50 transition-colors">
+            See Services
+          </a>
+        </div>
+        <div class="mt-10 flex items-center gap-6 text-sm text-white/50">
+          <div><span class="text-white font-semibold">{{YEARS}}+</span> Years in Business</div>
+          <div class="w-px h-4 bg-white/20"></div>
+          <div><span class="text-white font-semibold">5★</span> on Google</div>
+          <div class="w-px h-4 bg-white/20"></div>
+          <div><span class="text-white font-semibold">Walk-ins</span> Welcome</div>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="aspect-[3/4] rounded-2xl overflow-hidden bg-white/5">
+          <img src="/images/hero.jpg" alt="{{SHOP_NAME}}" class="w-full h-full object-cover" />
+        </div>
+        <div class="absolute -bottom-6 -left-6 bg-gold text-black px-6 py-4 rounded-xl font-semibold">
+          <div class="font-display text-2xl">{{CITY}}, NY</div>
+          <div class="text-xs font-medium opacity-70">{{ADDRESS}}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="py-24 bg-[#111]">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <p class="text-gold text-sm font-semibold tracking-widest uppercase mb-3">What We Offer</p>
+        <h2 class="font-display text-5xl tracking-wide">SERVICES & PRICING</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white/5 rounded-2xl p-6 border border-white/5 hover:border-gold/30 transition-colors">
+          <div class="text-gold font-display text-3xl mb-2">✂</div>
+          <h3 class="font-semibold text-lg mb-1">Haircut</h3>
+          <p class="text-white/50 text-sm mb-4">Classic cut, shape up, and style. All hair types welcome.</p>
+          <div class="font-display text-3xl text-gold">$25</div>
+        </div>
+        <div class="bg-white/5 rounded-2xl p-6 border border-white/5 hover:border-gold/30 transition-colors">
+          <div class="text-gold font-display text-3xl mb-2">🪒</div>
+          <h3 class="font-semibold text-lg mb-1">Beard Trim</h3>
+          <p class="text-white/50 text-sm mb-4">Line up, shape, and clean edge on your beard.</p>
+          <div class="font-display text-3xl text-gold">$15</div>
+        </div>
+        <div class="bg-white/5 rounded-2xl p-6 border border-gold/20 hover:border-gold/50 transition-colors relative">
+          <div class="absolute top-4 right-4 px-2 py-0.5 bg-gold text-black text-xs font-bold rounded-full">POPULAR</div>
+          <div class="text-gold font-display text-3xl mb-2">💎</div>
+          <h3 class="font-semibold text-lg mb-1">Cut + Beard</h3>
+          <p class="text-white/50 text-sm mb-4">Full haircut plus beard trim and hot towel finish.</p>
+          <div class="font-display text-3xl text-gold">$35</div>
+        </div>
+        <div class="bg-white/5 rounded-2xl p-6 border border-white/5 hover:border-gold/30 transition-colors">
+          <div class="text-gold font-display text-3xl mb-2">👶</div>
+          <h3 class="font-semibold text-lg mb-1">Kids Cut</h3>
+          <p class="text-white/50 text-sm mb-4">For kids 12 and under. Patient, friendly service.</p>
+          <div class="font-display text-3xl text-gold">$20</div>
+        </div>
+        <div class="bg-white/5 rounded-2xl p-6 border border-white/5 hover:border-gold/30 transition-colors">
+          <div class="text-gold font-display text-3xl mb-2">⚡</div>
+          <h3 class="font-semibold text-lg mb-1">Shape Up</h3>
+          <p class="text-white/50 text-sm mb-4">Clean edge up on hairline, temples, and neck.</p>
+          <div class="font-display text-3xl text-gold">$10</div>
+        </div>
+        <div class="bg-white/5 rounded-2xl p-6 border border-white/5 hover:border-gold/30 transition-colors">
+          <div class="text-gold font-display text-3xl mb-2">👴</div>
+          <h3 class="font-semibold text-lg mb-1">Senior Cut</h3>
+          <p class="text-white/50 text-sm mb-4">Haircut for seniors 65+. Respect and care guaranteed.</p>
+          <div class="font-display text-3xl text-gold">$20</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="py-24 bg-[#0f0f0f]">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <p class="text-gold text-sm font-semibold tracking-widest uppercase mb-3">Our Work</p>
+        <h2 class="font-display text-5xl tracking-wide">THE GALLERY</h2>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+        <div class="aspect-square rounded-xl overflow-hidden bg-white/5"><img src="/images/cut1.jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" /></div>
+        <div class="aspect-square rounded-xl overflow-hidden bg-white/5"><img src="/images/cut2.jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" /></div>
+        <div class="aspect-square rounded-xl overflow-hidden bg-white/5"><img src="/images/cut3.jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" /></div>
+        <div class="aspect-square rounded-xl overflow-hidden bg-white/5"><img src="/images/cut4.jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" /></div>
+        <div class="aspect-square rounded-xl overflow-hidden bg-white/5"><img src="/images/cut5.jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" /></div>
+        <div class="aspect-square rounded-xl overflow-hidden bg-white/5"><img src="/images/cut6.jpg" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-24 bg-[#111]">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+      <div class="aspect-square rounded-2xl overflow-hidden bg-white/5">
+        <img src="/images/shop.jpg" alt="Inside {{SHOP_NAME}}" class="w-full h-full object-cover" />
+      </div>
+      <div>
+        <p class="text-gold text-sm font-semibold tracking-widest uppercase mb-4">Our Story</p>
+        <h2 class="font-display text-5xl tracking-wide mb-6">ABOUT THE SHOP</h2>
+        <p class="text-white/60 leading-relaxed mb-6">{{ABOUT}}</p>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-white/5 rounded-xl p-4">
+            <div class="font-display text-3xl text-gold mb-1">{{YEARS}}+</div>
+            <div class="text-white/50 text-sm">Years Serving Syracuse</div>
+          </div>
+          <div class="bg-white/5 rounded-xl p-4">
+            <div class="font-display text-3xl text-gold mb-1">{{BARBERS}}</div>
+            <div class="text-white/50 text-sm">Expert Barbers</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-24 bg-[#0f0f0f]">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-14">
+        <p class="text-gold text-sm font-semibold tracking-widest uppercase mb-3">Come See Us</p>
+        <h2 class="font-display text-5xl tracking-wide">FIND US</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 mb-10">
+        <div class="bg-white/5 rounded-2xl p-6 text-center">
+          <div class="text-gold text-2xl mb-3">📍</div>
+          <div class="font-semibold mb-1">Address</div>
+          <div class="text-white/50 text-sm">{{ADDRESS}}<br/>{{CITY}}, NY {{ZIP}}</div>
+        </div>
+        <div class="bg-white/5 rounded-2xl p-6 text-center">
+          <div class="text-gold text-2xl mb-3">📞</div>
+          <div class="font-semibold mb-1">Phone</div>
+          <a href="tel:{{PHONE}}" class="text-gold text-sm hover:underline">{{PHONE}}</a>
+        </div>
+        <div class="bg-white/5 rounded-2xl p-6 text-center">
+          <div class="text-gold text-2xl mb-3">🕐</div>
+          <div class="font-semibold mb-1">Hours</div>
+          <div class="text-white/50 text-sm">{{HOURS}}</div>
+        </div>
+      </div>
+      <div class="rounded-2xl overflow-hidden h-64">
+        <iframe
+          src="https://maps.google.com/maps?q={{ADDRESS_ENCODED}}&output=embed"
+          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black py-8 border-t border-white/5">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <span class="font-display text-xl tracking-widest text-gold">{{SHOP_NAME}}</span>
+      <p class="text-white/30 text-sm">© 2026 {{SHOP_NAME}}. All rights reserved.</p>
+      <a href="tel:{{PHONE}}" class="px-6 py-2 rounded-full bg-gold text-black text-sm font-semibold hover:bg-yellow-400 transition-colors">
+        Call Now
+      </a>
+    </div>
+  </footer>
+
+</body>
+</html>
